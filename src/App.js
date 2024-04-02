@@ -8,6 +8,8 @@ import React, { useEffect, useState } from 'react';
 import Home from './components/Home';
 import Product from './components/Product';
 import Category from "./components/Category";
+import NewProduct from "./components/NewProduct";
+import NewCategory from "./components/NewCategory";
 
 function App() {
   
@@ -44,6 +46,16 @@ function App() {
               currentRoute === "category" ? 'btn btn-info ms-1' : "btn btn-outline-info ms-1"
             }>Catégories</Link>
           </li>
+          <li>
+            <Link to={"/newProduct"} onClick={() => setCurrentRoute("newProduct")} className={
+              currentRoute === "newProduct" ? 'btn btn-info ms-1' : "btn btn-outline-info ms-1"
+            }>NewProduct</Link>
+          </li>
+          <li>
+            <Link to={"/newCategory"} onClick={() => setCurrentRoute("newCategory")} className={
+              currentRoute === "newCategory" ? 'btn btn-info ms-1' : "btn btn-outline-info ms-1"
+            }>NewCategory</Link>
+          </li>
         </ul>
       </nav>
 
@@ -51,6 +63,8 @@ function App() {
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/product" element={<Product/>}></Route>
         <Route path="/category" element={<Category/>}></Route>
+        <Route path="/newProduct" element={<NewProduct/>}></Route>
+        <Route path="/newCategory" element={<NewCategory/>}></Route>
       </Routes>
     </BrowserRouter>
   );

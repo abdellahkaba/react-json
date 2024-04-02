@@ -17,6 +17,24 @@
       "name": "Sourie",
       "price": 400,
       "checked": true
+    },
+    {
+      "id": "0820",
+      "name": "akdjfl",
+      "price": "342",
+      "checked": "on"
+    },
+    {
+      "id": "e858",
+      "name": "safsdf",
+      "price": "843",
+      "checked": false
+    },
+    {
+      "id": "9952",
+      "name": "Moussa",
+      "price": "700",
+      "checked": false
     }
   ],
   "categories": [
@@ -37,6 +55,12 @@
       "name": "Vetements",
       "description": "Description de Vetements",
       "disponible": false
+    },
+    {
+      "id": "062b",
+      "name": "Fruits",
+      "description": "Description de Fruits",
+      "disponible": "on"
     }
   ]
 }

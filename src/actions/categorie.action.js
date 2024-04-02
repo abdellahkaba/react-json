@@ -13,6 +13,10 @@ export const deleteCategory =  (categorie) => {
     return api.delete(`/categories/${categorie.id}`)
 }
 
+export const addCategory = (categorie) => {
+    return api.post(`/categories`, categorie)
+}
+
 export const disponibleCategory = (categorie) => {
     return api.patch(`/categories/${categorie.id}`, { disponible: !categorie.disponible})
 }
