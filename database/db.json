@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Computer",
+      "price": 500,
+      "checked": true
+    },
+    {
+      "id": "2",
+      "name": "Printer",
+      "price": 700,
+      "checked": true
+    },
+    {
+      "id": "3",
+      "name": "Sourie",
+      "price": 400,
+      "checked": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Chaussures",
+      "description": "Description de chaussures",
+      "disponible": true
+    },
+    {
+      "id": "3",
+      "name": "Montres",
+      "description": "Description de Montres",
+      "disponible": true
+    },
+    {
+      "id": "4",
+      "name": "Vetements",
+      "description": "Description de Vetements",
+      "disponible": false
+    }
+  ]
+}

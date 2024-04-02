@@ -1,28 +1,29 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-//import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import "bootstrap/dist/js/bootstrap.bundle"
-import { useState } from 'react';
+import "bootstrap/dist/js/bootstrap.bundle"
+import React, { useEffect, useState } from 'react';
 import Home from './components/Home';
 import Product from './components/Product';
+import Category from "./components/Category";
 
 function App() {
   
   const [currentRoute,setCurrentRoute] = useState()
-  const [count,setCount] = useState(0)
-  const [incount,setIncount] = useState(0)
-  const increment = () => {
-    setCount(count + 1)
-  }
-  const decrement = () => {
-    setCount(count - 1)
-  }
   const onChange = () => {
-    setCurrentRoute("Home")
+    setCurrentRoute("home")
   }
   
+  /**
+   * Executer un traitement une fois que le rendu est chargé
+   */
+  useEffect(() => {
+    const path = window.location.pathname.toLocaleLowerCase()
+    setCurrentRoute(path.slice(1,path.length))
+    console.log(path)
+  },[])
   
   return (
     <BrowserRouter>
@@ -30,27 +31,26 @@ function App() {
         <ul className="nav nav-pills">
           <li>
             <Link onClick={onChange}  className={
-              currentRoute=="Home" ? 'btn btn-info ms-1' : 'btn btn-outline-info ms-1'
-            } to={"/Home"}>Home</Link>
+              currentRoute==="home" ? 'btn btn-info ms-1' : 'btn btn-outline-info ms-1'
+            } to={"/home"}>Home</Link>
           </li>
           <li>
-            <Link onClick={() => setCurrentRoute("Product")} className={
-             currentRoute == "Product" ? 'btn btn-info ms-1': 'btn btn-outline-info ms-1'
-            } to={"/Product"} >Product</Link>
+            <Link onClick={() => setCurrentRoute("product")} className={
+             currentRoute === "product" ? 'btn btn-info ms-1': 'btn btn-outline-info ms-1'
+            } to={"/product"} >Product</Link>
+          </li>
+          <li>
+            <Link to={"/category"} onClick={() => setCurrentRoute("category")} className={
+              currentRoute === "category" ? 'btn btn-info ms-1' : "btn btn-outline-info ms-1"
+            }>Catégories</Link>
           </li>
         </ul>
       </nav>
 
-      <div className='ms-3'>
-        <button onClick={increment} className='btn btn-success m-3'>Compter</button>
-        <button className='btn btn-danger' onClick={decrement}>Descrement</button>
-        <p>Le compteur est : {count} </p>
-      </div>
-
-
       <Routes>
-        <Route path="/Home" element={<Home/>}></Route>
-        <Route path="/Product" element={<Product/>}></Route>
+        <Route path="/home" element={<Home/>}></Route>
+        <Route path="/product" element={<Product/>}></Route>
+        <Route path="/category" element={<Category/>}></Route>
       </Routes>
     </BrowserRouter>
   );
