@@ -35,6 +35,24 @@
       "name": "Moussa",
       "price": "700",
       "checked": false
+    },
+    {
+      "id": "a2aa",
+      "name": "Aba",
+      "price": "98",
+      "checked": false
+    },
+    {
+      "id": "6a62",
+      "name": "Mohamed",
+      "price": "900",
+      "checked": "on"
+    },
+    {
+      "id": "0e37",
+      "name": "aba",
+      "price": "98",
+      "checked": "on"
     }
   ],
   "categories": [

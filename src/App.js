@@ -10,6 +10,7 @@ import Product from './components/Product';
 import Category from "./components/Category";
 import NewProduct from "./components/NewProduct";
 import NewCategory from "./components/NewCategory";
+import FluxData from "./components/FluxData";
 
 function App() {
   
@@ -56,6 +57,11 @@ function App() {
               currentRoute === "newCategory" ? 'btn btn-info ms-1' : "btn btn-outline-info ms-1"
             }>NewCategory</Link>
           </li>
+          <li>
+            <Link to={"/fluxData"} onClick={() => setCurrentRoute("fluxData")} className={
+              currentRoute === "fluxData" ? 'btn btn-info ms-1' : "btn btn-outline-info ms-1"
+            }>FluxData</Link>
+          </li>
         </ul>
       </nav>
 
@@ -65,6 +71,7 @@ function App() {
         <Route path="/category" element={<Category/>}></Route>
         <Route path="/newProduct" element={<NewProduct/>}></Route>
         <Route path="/newCategory" element={<NewCategory/>}></Route>
+        <Route path="/fluxData" element={<FluxData/>}></Route>
       </Routes>
     </BrowserRouter>
   );

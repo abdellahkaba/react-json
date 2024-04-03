@@ -4,8 +4,11 @@ export const api  = axios.create({
     baseURL: "http://localhost:4000"
 });
 
-export const getAllProduct = () => {
-    return api.get("/products") ;
+// export const getAllProduct = (keyword='', page = 1, size = 2) => {
+//     return api.get(`/products?name_like=${keyword}&_page=${page}&_limit=${size}`) ;
+// }
+export const getAllProduct = (keyword) => {
+    return api.get(`/products`) ;
 }
 
 export const deleteProduct = (product) => {
